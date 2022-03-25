@@ -1,0 +1,48 @@
+data:
+  - attributes:
+      created_at: '2022-03-24T14:56:19'
+      destination_override_endpoint: 'https://echo.apps.verygood.systems'
+      entries:
+        - classifiers: {}
+          config:
+            condition: AND
+            rules:
+              - expression:
+                  field: PathInfo
+                  operator: equals
+                  type: string
+                  values:
+                    - /post
+              - expression:
+                  field: ContentType
+                  operator: equals
+                  type: string
+                  values:
+                    - application/json
+          id: 170ddcdf-335a-44b2-a3a3-6bad7b047607
+          id_selector: null
+          operation: REDACT
+          operations: null
+          phase: REQUEST
+          public_token_generator: UUID
+          targets:
+            - body
+          token_manager: PERSISTENT
+          transformer: JSON_PATH
+          transformer_config:
+            - $.account_number
+          transformer_config_map: null
+          type: null
+      host_endpoint: (.*)\.verygoodproxy\.com
+      id: ab2d64bb-2cba-4944-b55b-47ddb9758658
+      ordinal: null
+      port: 80
+      protocol: http
+      source_endpoint: '*'
+      tags:
+        name: echo.apps.verygood.systems-snow-cylinder
+        source: RouteContainer
+      updated_at: '2022-03-24T17:30:45'
+    id: ab2d64bb-2cba-4944-b55b-47ddb9758658
+    type: rule_chain
+version: 1
