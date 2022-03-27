@@ -3,6 +3,7 @@ const express = require('express');
 
 
 const inboundRoute = require("./routes/inbound");
+const outboundRoute = require("./routes/outbound");
 
 
 const app = express();
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.use("/api/inbound", inboundRoute);
+app.use("/api/outbound", outboundRoute);
 
 
 app.listen(port, () => {
